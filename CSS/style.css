@@ -1,0 +1,270 @@
+
+/* MOBILE FIRST APPROACH:
+  If the screen is less equal than 425px:
+  screen <= 425px
+  CSS styles for smartphones - DEFAULT 
+*/
+
+body {
+	background: white;	
+	font-family: "Times New Roman", serif;
+}
+
+* {/*star symbol means all HTML elements*/
+	box-sizing: border-box;/*Ref: https://www.w3schools.com/css/css3_box-sizing.asp*/
+	margin: 0;
+	padding: 0;
+}
+
+/*------------------------------------*/
+/*Nav Bar Styles*/
+nav {
+	min-height: 5vh;
+	background-color:#e0dba8;
+	
+	/*Centralization*/
+	display: flex;
+	justify-content: left;
+	align-items: left;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	
+	display: none;
+}
+
+nav ul li {
+	display: inline-block;
+	font-family: 'Oswald', sans-serif;
+	font-size: 18px;
+
+	/*dropdown menu*/
+	position: relative;
+}
+
+nav ul li a {
+	display: block;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;  
+	
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.active {
+	background-color: #e3b61f;
+}
+
+nav ul li a:hover:not(.active) {
+	background-color: gray;
+}
+
+/*------------------------------------*/
+/*Set Styles for footer*/
+footer {
+	min-height: 5vh;
+	background: #F4D03F;
+
+	/*Centralize the content inside this element both vertically and horizontally*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer p {
+	text-align: center;
+	font-size: 20px;
+}
+
+/*------------------------------------*/
+/*Set styles for main area*/
+main {
+	min-height: 80vh;
+	background: white;
+}
+
+/* The sidebar menu */
+.sidebar {
+	height: 100%; /* 100% Full-height */
+	width: 0; /* 0 width - change this with JavaScript */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Stay on top */
+	top: 0;
+	left: 0;
+	background-color: #111111; /* Black*/
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 15px; /* Place content 60px from the top */
+	transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  }
+
+  /* The sidebar links */
+.sidebar a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 18px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+  }
+
+  /* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+	color: #e7dfc3;
+  }
+
+  /* Position and style the close button (top right corner) */
+.sidebar .closeButton {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+  }
+
+  /* The button used to open the sidebar */
+.openbtn {
+	font-size: 20px;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	background-color: #635e84;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+  }
+
+.openbtn:hover {
+	background-color: #413c61;
+  }
+
+section {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 20px;
+}
+
+/*-----------------------*/
+/*Set styles for the SLIDESHOW */
+/*Centralize the slideShowImage*/
+#slideShowImage {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	
+	/*Set the image height and width for smartphones*/
+	height: 150px;
+}
+
+/*-----------------------*/
+/*Set style for 3 columns*/
+ .container-1 {	
+	/*Use display: flex to change the layout*/
+	display: flex;
+	flex-direction: column;	
+ }
+ 
+ .topic-box {
+	margin: 10px;
+	padding: 30px;
+	border: 1px solid black;
+	
+	/*Create box equal size*/
+	flex: 1;
+ }
+ 
+ .container-1 .topic-box h3 {	 
+	 text-align: center;
+	 font-size: 40px;
+	 margin-bottom: 20px;
+ }
+ 
+ .container-1 .topic-box p {
+	  margin-top: 20px;
+	  text-align: center;
+	  line-height: 24px;
+ }
+ 
+ .container-1 .topic-box img {
+	 /*Centralize the image*/
+	 display: block;	 
+	 margin-left: auto;
+	 margin-right: auto;
+	 
+	 /*Make the image responsive*/
+	 height: 100px;
+	 width: auto;
+ }
+ 
+ /*-----------------------*/
+ /*Set styles for the "READ MORE" button*/
+ .read-more-button {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;	 
+
+	border-radius: 5%;
+	background-color: orange;
+	margin-top: 20px;
+	padding: 5px 20px 5px 20px; 
+ }
+ 
+ /*-----------------------*/
+ /*Set styles for form and inputs inside form*/
+ .search-form {
+	 display: block;
+	 text-align: center;
+ }
+ 
+ .search-form input[type="submit"] {
+	padding: 5px 20px 5px 20px; 
+	background-color: orange;
+ }
+ 
+  .search-form input[type="text"] {
+	padding: 5px 20px 5px 20px; 
+ }
+ 
+
+/*----------------------------------------------------------------*/
+ /*Else if sceen is less equal than 768px:
+   425px < screen <768px
+   CSS styles for tablets/ipad
+ */
+ @media only screen and (min-width: 426px) {
+	
+	/*Change the flex direction to row*/
+	.container-1 {
+		flex-direction: row;
+	}
+	
+	nav ul {display: inline-block;}
+
+	.openbtn {display: none;}
+
+	#slideShowImage {
+		/*Set the image height and width*/
+		height: 200px;
+	}
+	
+ }
+ 
+ /*----------------------------------------------------------------*/
+ /*Else: all screen bigger than 768px
+   768px < screen
+   CSS Styles for big screens 
+ */
+ @media only screen and (min-width: 769px) {
+	#slideShowImage {
+		/*Set the image height and width*/
+		height: 400px;
+	}
+
+	.sidebar {padding-top: 60px;}
+  	.sidebar a {font-size: 25px;}
+ }
